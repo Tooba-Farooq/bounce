@@ -26,8 +26,10 @@ public class Ball : MonoBehaviour
 
     private bool isJumpPressed;
     private bool isOnGround;
+    private bool isHoldingKey = false;
 
     private float horizontalInput;
+    private float currentSpeedX = 0f;
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
@@ -69,8 +71,14 @@ public class Ball : MonoBehaviour
         Move(horizontalInput, maxSpeed, acceleration);
     }
 
-    private float currentSpeedX = 0f;
-    private bool isHoldingKey = false;
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            StartCoroutine(RespawnRoutine());
+        }
+
+    }
 
     public void Move(float direction, float maxSpeed, float acceleration)
     {
@@ -101,15 +109,6 @@ public class Ball : MonoBehaviour
             rb.linearVelocityX = horizontalInput * speed;
         }
     }*/
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            StartCoroutine(RespawnRoutine());
-        }
-        
-    }
 
     private IEnumerator RespawnRoutine()
     {
