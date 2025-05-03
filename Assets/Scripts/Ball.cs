@@ -53,12 +53,10 @@ public class Ball : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, maxRayDistance, mask);
         isOnGround = hit.collider != null;
-        Debug.DrawRay(transform.position, Vector2.down, Color.yellow);
 
         horizontalInput = Input.GetAxisRaw("Horizontal");
         isJumpPressed = Input.GetKeyDown(KeyCode.UpArrow);
 
-        Debug.Log(isOnGround);
         if (isJumpPressed && isOnGround)
         {
             //rb.linearVelocityY = jumpForce;
