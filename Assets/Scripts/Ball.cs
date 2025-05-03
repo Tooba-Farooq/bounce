@@ -59,7 +59,8 @@ public class Ball : MonoBehaviour
         Debug.Log(isOnGround);
         if (isJumpPressed && isOnGround)
         {
-            rb.linearVelocityY = jumpForce;
+            //rb.linearVelocityY = jumpForce;
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
 
@@ -97,14 +98,7 @@ public class Ball : MonoBehaviour
 
     /*public void Move(float direction, float speed, float acceleration)
     {
-        if (direction == 0)
-        {
-            rb.linearVelocityX = 0f;
-        }
-        else
-        {
-            // rb.linearVelocityX = horizontalInput * speed;
-            rb.linearVelocityX = Mathf.MoveTowards(rb.linearVelocityX, direction * speed, acceleration * Time.fixedDeltaTime);
+            rb.linearVelocityX = horizontalInput * speed;
         }
     }*/
 
