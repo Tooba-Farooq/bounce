@@ -291,7 +291,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_5
+      name: vacuum
       rect:
         serializedVersion: 2
         x: 225
@@ -335,7 +335,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_7
+      name: spider
       rect:
         serializedVersion: 2
         x: 309
@@ -445,7 +445,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_12
+      name: pump
       rect:
         serializedVersion: 2
         x: 559
@@ -687,7 +687,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_25
+      name: downright brick
       rect:
         serializedVersion: 2
         x: 211
@@ -1119,6 +1119,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       ball: -1361711351
+      downright brick: 1898402500
       gate(1): 561162789
       gate(10): -47361205
       gate(11): 2031463523
@@ -1134,12 +1135,13 @@ TextureImporter:
       kite: 224205984
       popped ball: -527927670
       poppedball: -1967404207
+      pump: -1680987027
       red_brick: -1863220288
+      spider: -2043673018
       spike: 389767420
       spritesheet_0: 158287852
       spritesheet_10: 747762354
       spritesheet_11: -1163833473
-      spritesheet_12: -1680987027
       spritesheet_13: 663129333
       spritesheet_14: 2118812065
       spritesheet_15: 666518311
@@ -1150,16 +1152,14 @@ TextureImporter:
       spritesheet_21: 58114832
       spritesheet_23: -1434543114
       spritesheet_24: 1395444675
-      spritesheet_25: 1898402500
       spritesheet_26: 1799005541
       spritesheet_27: 1150250475
       spritesheet_28: -1573179808
       spritesheet_4: -1986375981
-      spritesheet_5: -1590849341
       spritesheet_6: -1537736096
-      spritesheet_7: -2043673018
       spritesheet_8: -577604580
       spritesheet_9: -225242968
+      vacuum: -1590849341
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

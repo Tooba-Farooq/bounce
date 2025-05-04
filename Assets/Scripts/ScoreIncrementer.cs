@@ -10,7 +10,15 @@ public class ScoreIncrementer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        RingHandler.RingCollected += IncrementScore;
+        RingHandler.RingCollected += IncrementScore500;
+        LifeIncrementer.LifeCollected += IncrementScore1000;
+        CheckpointHandler.CheckpointCollected += IncrementScore500;
+    }
+
+    private void IncrementScore1000()
+    {
+        score += 1000;
+        TMP.text = score.ToString("D7");
     }
 
     void Awake()
@@ -18,7 +26,7 @@ public class ScoreIncrementer : MonoBehaviour
         TMP = GetComponent<TextMeshProUGUI>();
     }
 
-    private void IncrementScore()
+    private void IncrementScore500()
     {
         score += 500;
         TMP.text = score.ToString("D7");    

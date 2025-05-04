@@ -1,15 +1,18 @@
 using TMPro;
 using UnityEngine;
+using System;
 
 public class LifeIncrementer : MonoBehaviour
 {
-    [SerializeField] int lifeCount = 3;
+    public static int lifeCount = 3;
 
     [SerializeField] TextMeshProUGUI lifeCountValue;
-   
+    public static Action LifeCollected;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         lifeCount++;
+        LifeCollected?.Invoke();
         lifeCountValue.text = $"X{lifeCount}";
         Destroy(gameObject);
     }

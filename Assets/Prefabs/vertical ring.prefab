@@ -138,4 +138,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66322b4b00ef8d240b80687eadad178d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalRingsInLevelSerialized: 8
   greyRingSprite: {fileID: -8712094031880227852, guid: 556c6c5ac4745134bbbbcd94fb2a124d, type: 3}
