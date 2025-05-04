@@ -33,6 +33,7 @@ public class Ball : MonoBehaviour
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
+    private CircleCollider2D cc;
 
     public static Ball Instance { get; private set; }
     [HideInInspector] public Vector3 respawnPosition;
@@ -41,6 +42,7 @@ public class Ball : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        cc = GetComponent<CircleCollider2D>();
         respawnPosition = transform.position;
     }
 
@@ -65,7 +67,10 @@ public class Ball : MonoBehaviour
     }
 
     private void FixedUpdate()
-    { 
+    {
+        if (rb.bodyType == RigidbodyType2D.Static)
+            return; 
+
         Move(horizontalInput, maxSpeed, acceleration);
     }
 
@@ -110,14 +115,17 @@ public class Ball : MonoBehaviour
 
     private IEnumerator RespawnRoutine()
     {
+        cc.enabled = false;
         transform.rotation = Quaternion.Euler(0, 0, 0);
         sr.sprite = poppedBallSprite;
         rb.bodyType = RigidbodyType2D.Static;
+      
 
         yield return delayBeforeRespawn;
 
         transform.position = respawnPosition;
         rb.bodyType = RigidbodyType2D.Dynamic;
         sr.sprite = normalBallSprite;
+        cc.enabled = true;
     }
 }

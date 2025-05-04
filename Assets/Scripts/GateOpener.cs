@@ -33,7 +33,6 @@ public class GateOpener : MonoBehaviour
         {
             anim.enabled = true;
             gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-            LifeIncrementer.lifeCount = 3;
         }
     }
 }

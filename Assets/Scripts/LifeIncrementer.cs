@@ -4,7 +4,7 @@ using System;
 
 public class LifeIncrementer : MonoBehaviour
 {
-    public static int lifeCount = 3;
+    public int lifeCount = 3;
 
     [SerializeField] TextMeshProUGUI lifeCountValue;
     public static Action LifeCollected;
