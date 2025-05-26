@@ -26,10 +26,7 @@ public class GateOpener : MonoBehaviour
 
     private void OpenGate()
     {
-        Debug.Log(RingHandler.collectedRingsCount);
-        Debug.Log(RingHandler.totalRingsInLevel);
-
-        if (RingHandler.collectedRingsCount == RingHandler.totalRingsInLevel)
+        if (RingHandler.collectedRingsCount == GameManager.Instance.totalRingsInLevel)
         {
             anim.enabled = true;
             gameObject.GetComponent<BoxCollider2D>().isTrigger = true;

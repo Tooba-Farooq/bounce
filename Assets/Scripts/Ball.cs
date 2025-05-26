@@ -1,8 +1,5 @@
 using System.Collections;
-using JetBrains.Annotations;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
@@ -53,6 +50,11 @@ public class Ball : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, maxRayDistance, mask);
         isOnGround = hit.collider != null;
 
@@ -107,11 +109,6 @@ public class Ball : MonoBehaviour
         }
     }
 
-    /*public void Move(float direction, float speed, float acceleration)
-    {
-            rb.linearVelocityX = horizontalInput * speed;
-        }
-    }*/
 
     private IEnumerator RespawnRoutine()
     {

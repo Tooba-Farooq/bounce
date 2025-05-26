@@ -4,10 +4,15 @@ using System;
 
 public class LifeIncrementer : MonoBehaviour
 {
-    public int lifeCount = 3;
+    public static int lifeCount { get; private set; }
 
     [SerializeField] TextMeshProUGUI lifeCountValue;
     public static Action LifeCollected;
+
+    private void Awake()
+    {
+        lifeCount = 3;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

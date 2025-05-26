@@ -6,8 +6,6 @@ public class RingHandler : MonoBehaviour
     public static int totalRingsInLevel {get; private set;}
     public static int collectedRingsCount {  get; private set; }
 
-    [SerializeField] int totalRingsInLevelSerialized;
-
     [SerializeField] Sprite greyRingSprite;
 
     private SpriteRenderer sr;
@@ -19,7 +17,6 @@ public class RingHandler : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         cc = GetComponent<CapsuleCollider2D>();
-        totalRingsInLevel = totalRingsInLevelSerialized;
         collectedRingsCount = 0;
     }
 
