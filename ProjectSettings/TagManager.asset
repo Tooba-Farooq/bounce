@@ -8,6 +8,8 @@ TagManager:
   - checkpoint
   - Ground
   - ring
+  - Pump
+  - Vaccum
   layers:
   - Default
   - TransparentFX

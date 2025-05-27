@@ -181,15 +181,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet 1_0
+      name: big_ball
       rect:
         serializedVersion: 2
         x: 1
         y: 151
         width: 54
         height: 54
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.49999973, y: 0.3651253}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -810,6 +810,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      big_ball: 1281512577
       checkpoint: -361477312
       green_arrow: 485015537
       hb: -1478138607
@@ -822,7 +823,6 @@ TextureImporter:
       ring_vertical: -636162749
       small_ball: 928754052
       spike: 800037418
-      spritesheet 1_0: 1281512577
       spritesheet 1_10: 888327358
       spritesheet 1_11: -931158355
       spritesheet 1_12: -1401166222

@@ -1584,7 +1584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3516354187695362608, guid: 9dd42bef48a6aba4bb846914d8c709eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.92
+      value: -3.53
       objectReference: {fileID: 0}
     - target: {fileID: 3516354187695362608, guid: 9dd42bef48a6aba4bb846914d8c709eb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1622,6 +1622,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 6112513061629035929, guid: 9dd42bef48a6aba4bb846914d8c709eb, type: 3}
+      propertyPath: bigBallSprite
+      value: 
+      objectReference: {fileID: 1281512577, guid: cff17f3920aa4e249bb75653c22a2ae3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2126,9 +2130,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1004734356}
   - component: {fileID: 1004734355}
+  - component: {fileID: 1004734357}
   m_Layer: 0
   m_Name: pump
-  m_TagString: Untagged
+  m_TagString: Pump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2203,6 +2208,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1004734357
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004734354}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1045914117
 GameObject:
   m_ObjectHideFlags: 0
@@ -2325,7 +2376,7 @@ Transform:
   m_GameObject: {fileID: 1045914117}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3955013, y: 2.92, z: -5}
+  m_LocalPosition: {x: -1.3955013, y: -3.53, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2451,7 +2502,7 @@ Transform:
   m_GameObject: {fileID: 1054378487}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12437907, y: 0.00999999, z: -5}
+  m_LocalPosition: {x: -0.12441301, y: -0.014109999, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10370,6 +10421,10 @@ PrefabInstance:
     - target: {fileID: 108659813705474950, guid: d5e1ff53ad3268d4cb95a70b299cd225, type: 3}
       propertyPath: m_Name
       value: vacuum
+      objectReference: {fileID: 0}
+    - target: {fileID: 108659813705474950, guid: d5e1ff53ad3268d4cb95a70b299cd225, type: 3}
+      propertyPath: m_TagString
+      value: Vaccum
       objectReference: {fileID: 0}
     - target: {fileID: 6308087894763366324, guid: d5e1ff53ad3268d4cb95a70b299cd225, type: 3}
       propertyPath: m_LocalPosition.x

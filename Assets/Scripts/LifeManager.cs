@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using System;
 
-public class LifeIncrementer : MonoBehaviour
+public class LifeManager : MonoBehaviour
 {
     public static int lifeCount { get; private set; }
 
@@ -12,6 +12,7 @@ public class LifeIncrementer : MonoBehaviour
     private void Awake()
     {
         lifeCount = 3;
+        //Ball.EnemyCollision += DecrementLife;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,4 +22,10 @@ public class LifeIncrementer : MonoBehaviour
         lifeCountValue.text = $"X{lifeCount}";
         Destroy(gameObject);
     }
+
+    //private void DecrementLife()
+    //{
+    //    lifeCount--;
+    //    lifeCountValue.text = $"X{lifeCount}";
+    //}
 }

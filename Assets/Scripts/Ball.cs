@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using System;
 
 public class Ball : MonoBehaviour
 {
@@ -17,20 +18,31 @@ public class Ball : MonoBehaviour
 
     [Header("Ball Sprites")]
     [SerializeField] Sprite poppedBallSprite;
-    [SerializeField] Sprite normalBallSprite;
+    [SerializeField] Sprite smallBallSprite;
+    [SerializeField] Sprite bigBallSprite;
 
     [SerializeField] WaitForSeconds delayBeforeRespawn = new WaitForSeconds(0.75f);
 
     private bool isJumpPressed;
     private bool isOnGround;
     private bool isHoldingKey = false;
+    private bool isBallBig;
 
     private float horizontalInput;
     private float currentSpeedX = 0f;
 
+    private Vector2 smallColliderOffset;
+    private float smallColliderRadius;
+
+    private Vector2 bigColliderOffset = new Vector2(-0.005817673f, 0.182369f);
+    private float bigColliderRadius = 0.6755558f;
+
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private CircleCollider2D cc;
+
+
+    public static Action EnemyCollision;
 
     public static Ball Instance { get; private set; }
     [HideInInspector] public Vector3 respawnPosition;
@@ -40,7 +52,11 @@ public class Ball : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         cc = GetComponent<CircleCollider2D>();
+
         respawnPosition = transform.position;
+
+        smallColliderOffset = cc.offset;
+        smallColliderRadius = cc.radius;
     }
 
     private void Start()
@@ -80,7 +96,25 @@ public class Ball : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+
             StartCoroutine(RespawnRoutine());
+            EnemyCollision?.Invoke();
+        }
+
+        if (collision.gameObject.tag == "Pump")
+        {
+            isBallBig = true;
+            sr.sprite = bigBallSprite;
+            cc.radius = bigColliderRadius;
+            cc.offset = bigColliderOffset;
+        }
+
+        if (collision.gameObject.tag == "Vaccum")
+        {
+            isBallBig = false;
+            sr.sprite = smallBallSprite;
+            cc.radius = smallColliderRadius;
+            cc.offset = smallColliderOffset;
         }
 
     }
@@ -122,7 +156,7 @@ public class Ball : MonoBehaviour
 
         transform.position = respawnPosition;
         rb.bodyType = RigidbodyType2D.Dynamic;
-        sr.sprite = normalBallSprite;
+        sr.sprite = smallBallSprite;
         cc.enabled = true;
     }
 }
