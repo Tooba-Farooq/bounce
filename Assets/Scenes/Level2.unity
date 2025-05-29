@@ -2959,6 +2959,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalRingsInLevel: 8
+  lifeCount: 0
+  lifeCountValue: {fileID: 2143515175}
 --- !u!4 &1353607754
 Transform:
   m_ObjectHideFlags: 0
