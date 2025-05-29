@@ -11,7 +11,7 @@ public class ScoreIncrementer : MonoBehaviour
     void Start()
     {
         RingHandler.RingCollected += IncrementScore500;
-        LifeIncrementer.LifeCollected += IncrementScore1000;
+        LifeCollectionInformer.LifeCollected += IncrementScore1000;
         CheckpointHandler.CheckpointCollected += IncrementScore500;
     }
 

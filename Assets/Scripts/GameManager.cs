@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -5,10 +6,29 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public int totalRingsInLevel;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    [HideInInspector] public int lifeCount;
+
+    [SerializeField] TextMeshProUGUI lifeCountValue;
     private void Awake()
     {
+        lifeCount = 3;
         Instance = this;
+        LifeCollectionInformer.LifeCollected += IncrementLife;
+        Ball.EnemyCollision += DecrementLife;
     }
+
+    private void IncrementLife()
+    {
+        lifeCount++;
+        lifeCountValue.text = $"X{lifeCount}";
+    }
+
+    private void DecrementLife()
+    {
+        lifeCount--;
+        lifeCountValue.text = $"X{lifeCount}";
+    }
+    
     
 }

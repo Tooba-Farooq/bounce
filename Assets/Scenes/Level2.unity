@@ -1626,6 +1626,10 @@ PrefabInstance:
       propertyPath: bigBallSprite
       value: 
       objectReference: {fileID: 1281512577, guid: cff17f3920aa4e249bb75653c22a2ae3, type: 3}
+    - target: {fileID: 6112513061629035929, guid: 9dd42bef48a6aba4bb846914d8c709eb, type: 3}
+      propertyPath: smallBallSprite
+      value: 
+      objectReference: {fileID: 928754052, guid: cff17f3920aa4e249bb75653c22a2ae3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10421,10 +10425,6 @@ PrefabInstance:
     - target: {fileID: 108659813705474950, guid: d5e1ff53ad3268d4cb95a70b299cd225, type: 3}
       propertyPath: m_Name
       value: vacuum
-      objectReference: {fileID: 0}
-    - target: {fileID: 108659813705474950, guid: d5e1ff53ad3268d4cb95a70b299cd225, type: 3}
-      propertyPath: m_TagString
-      value: Vaccum
       objectReference: {fileID: 0}
     - target: {fileID: 6308087894763366324, guid: d5e1ff53ad3268d4cb95a70b299cd225, type: 3}
       propertyPath: m_LocalPosition.x

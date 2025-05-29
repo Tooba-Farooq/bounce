@@ -3,7 +3,6 @@ using System;
 
 public class RingHandler : MonoBehaviour
 {
-    public static int totalRingsInLevel {get; private set;}
     public static int collectedRingsCount {  get; private set; }
 
     [SerializeField] Sprite greyRingSprite;
