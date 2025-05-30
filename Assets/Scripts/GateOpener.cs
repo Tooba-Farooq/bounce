@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class GateOpener : MonoBehaviour
 {
     private Animator anim;
-    [SerializeField] string leveltoLoad;
+
+    [SerializeField] Canvas gameFinishCanvas;
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -16,7 +17,8 @@ public class GateOpener : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene(leveltoLoad);
+        gameFinishCanvas.gameObject.SetActive(true);
+        Ball.Instance.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
     }
 
     private void OnDestroy()

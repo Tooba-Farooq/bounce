@@ -3,6 +3,7 @@ using UnityEngine;
 public class SpiderMover : MonoBehaviour
 {
     private float direction = 1;
+    private const int GROUND_LAYER_INDEX = 3;
 
     [SerializeField] float speed;
 
@@ -21,7 +22,7 @@ public class SpiderMover : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 3)
+        if (collision.gameObject.layer == GROUND_LAYER_INDEX)
         {
             direction *= -1;
         }

@@ -8,8 +8,11 @@ public class GameManager : MonoBehaviour
     public int totalRingsInLevel;
 
     [HideInInspector] public int lifeCount;
+    public int levelNo;
 
     [SerializeField] TextMeshProUGUI lifeCountValue;
+
+    
     private void Awake()
     {
         lifeCount = 3;
