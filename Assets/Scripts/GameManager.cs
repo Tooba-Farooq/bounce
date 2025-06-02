@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public int lifeCount;
     public int levelNo;
 
+    public int extraFinalScore;
+
     [SerializeField] TextMeshProUGUI lifeCountValue;
     [SerializeField] Canvas gameOverCanvas;
 

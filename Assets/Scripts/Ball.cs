@@ -46,6 +46,8 @@ public class Ball : MonoBehaviour
     private SpriteRenderer sr;
     private CircleCollider2D cc;
 
+    [HideInInspector]
+    public int EnemyCollisionsNo;
 
     public static Action EnemyCollision;
 
@@ -104,6 +106,7 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             EnemyCollision?.Invoke();
+            EnemyCollisionsNo++;
             if (GameManager.Instance.lifeCount == 0)
             {
                 return;
