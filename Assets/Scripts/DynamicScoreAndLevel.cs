@@ -12,7 +12,7 @@ public class DynamicScoreAndLevel : MonoBehaviour
     }
     void Start()
     {
-        levelCompleteText.text = $"LEVEL{GameManager.Instance.levelNo} COMPLETE";
+        levelCompleteText.text = $"Level{GameManager.Instance.levelNo} Complete";
         finalScoreText.text = $"{ScoreIncrementer.score}";
     }
 

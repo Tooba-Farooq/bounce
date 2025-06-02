@@ -20,7 +20,12 @@ public class CheckpointHandler : MonoBehaviour
     {
         CheckpointCollected?.Invoke();
         sr.sprite = arrow_sprite;
+
         Ball.Instance.respawnPosition = transform.position;
+        Ball.Instance.respawnBallSprite = Ball.Instance.GetComponent<SpriteRenderer>().sprite;
+        Ball.Instance.respawnColliderRadius = Ball.Instance.GetComponent<CircleCollider2D>().radius;
+        Ball.Instance.respawnColliderOffset = Ball.Instance.GetComponent <CircleCollider2D>().offset;
+
         cc.enabled = false;
     }
     

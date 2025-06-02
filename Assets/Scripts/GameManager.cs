@@ -11,14 +11,20 @@ public class GameManager : MonoBehaviour
     public int levelNo;
 
     [SerializeField] TextMeshProUGUI lifeCountValue;
+    [SerializeField] Canvas gameOverCanvas;
 
-    
+
     private void Awake()
     {
         lifeCount = 3;
         Instance = this;
         LifeCollectionInformer.LifeCollected += IncrementLife;
         Ball.EnemyCollision += DecrementLife;
+    }
+
+    private void OnDestroy()
+    {
+        Ball.EnemyCollision -= DecrementLife;
     }
 
     private void IncrementLife()
@@ -31,6 +37,16 @@ public class GameManager : MonoBehaviour
     {
         lifeCount--;
         lifeCountValue.text = $"X{lifeCount}";
+        if (lifeCount == 0)
+        {
+            gameOver();
+        }
+        
+    }
+    private void gameOver()
+    {
+        gameOverCanvas.gameObject.SetActive(true);
+        Ball.Instance.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
     }
     
     

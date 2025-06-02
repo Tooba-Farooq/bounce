@@ -21,6 +21,11 @@ public class Ball : MonoBehaviour
     [SerializeField] Sprite smallBallSprite;
     [SerializeField] Sprite bigBallSprite;
 
+    [HideInInspector] public Vector3 respawnPosition;
+    [HideInInspector] public Sprite respawnBallSprite;
+    [HideInInspector] public Vector2 respawnColliderOffset;
+    [HideInInspector] public float respawnColliderRadius;
+
     [SerializeField] WaitForSeconds delayBeforeRespawn = new WaitForSeconds(0.75f);
 
     private bool isJumpPressed;
@@ -45,7 +50,6 @@ public class Ball : MonoBehaviour
     public static Action EnemyCollision;
 
     public static Ball Instance { get; private set; }
-    [HideInInspector] public Vector3 respawnPosition;
 
     private void Awake()
     {
@@ -54,6 +58,9 @@ public class Ball : MonoBehaviour
         cc = GetComponent<CircleCollider2D>();
 
         respawnPosition = transform.position;
+        respawnColliderOffset = cc.offset;
+        respawnColliderRadius = cc.radius;
+        respawnBallSprite = sr.sprite;
 
         smallColliderOffset = cc.offset;
         smallColliderRadius = cc.radius;
@@ -96,9 +103,12 @@ public class Ball : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-
-            StartCoroutine(RespawnRoutine());
             EnemyCollision?.Invoke();
+            if (GameManager.Instance.lifeCount == 0)
+            {
+                return;
+            }
+            StartCoroutine(RespawnRoutine());
         }
 
         if (collision.gameObject.tag == "Pump")
@@ -156,7 +166,9 @@ public class Ball : MonoBehaviour
 
         transform.position = respawnPosition;
         rb.bodyType = RigidbodyType2D.Dynamic;
-        sr.sprite = smallBallSprite;
         cc.enabled = true;
+        sr.sprite = respawnBallSprite;
+        cc.radius = respawnColliderRadius;
+        cc.offset = respawnColliderOffset;
     }
 }

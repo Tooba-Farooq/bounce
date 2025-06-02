@@ -12,8 +12,8 @@ public class LevelCompletion : MonoBehaviour
     private Vector2 closeGateColliderOffset;
     private Vector2 closeGateColliderSize;
 
-    private Vector2 openGateColliderOffset = new Vector2(-0.03104189f, 0f);
-    private Vector2 openGateColliderSize = new Vector2(0.9755434f, 2f);
+    private Vector2 openGateColliderOffset = new Vector2(0.04248928f, 0f);
+    private Vector2 openGateColliderSize = new Vector2(0.3627881f, 2f);
 
     private BoxCollider2D collider;
 

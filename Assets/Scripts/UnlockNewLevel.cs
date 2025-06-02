@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class UnlockNewLevel : MonoBehaviour
 {
-    int completedLevelNumber = 1;
-
     [SerializeField] TextMeshProUGUI level2ButtonText;
     [SerializeField] Image star1;
     [SerializeField] Image star2;
@@ -16,7 +14,7 @@ public class UnlockNewLevel : MonoBehaviour
    private void Awake()
    {
         Debug.Log(SavingCompletedLevel.LoadCompletedLevel());
-        if (SavingCompletedLevel.LoadCompletedLevel() == completedLevelNumber)
+        if (SavingCompletedLevel.LoadCompletedLevel() != 0) // faulty logic replace later
         {
             level2Button.image.sprite = unlockedLevelSprite;
             level2Button.interactable = true;
