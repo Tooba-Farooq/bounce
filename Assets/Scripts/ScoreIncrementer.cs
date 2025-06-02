@@ -11,7 +11,6 @@ public class ScoreIncrementer : MonoBehaviour
     private void IncrementScore1000()
     {
         score += 1000;
-        Debug.Log(score);
         TMP.text = score.ToString("D7");
     }
 
@@ -24,7 +23,6 @@ public class ScoreIncrementer : MonoBehaviour
 
         TMP = GetComponent<TextMeshProUGUI>();
         score = 0;
-        Debug.Log(score);
     }
 
     void OnDestroy()
@@ -36,13 +34,11 @@ public class ScoreIncrementer : MonoBehaviour
 
         TMP = GetComponent<TextMeshProUGUI>();
         score = 0;
-        Debug.Log(score);
     }
 
     private void IncrementScore500()
     {
         score += 500;
-        Debug.Log(score);
         TMP.text = score.ToString("D7");    
     }
 
