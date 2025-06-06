@@ -31,7 +31,6 @@ public class Ball : MonoBehaviour
     private bool isJumpPressed;
     private bool isOnGround;
     private bool isHoldingKey = false;
-    private bool isBallBig;
 
     private float horizontalInput;
     private float currentSpeedX = 0f;
@@ -116,7 +115,6 @@ public class Ball : MonoBehaviour
 
         if (collision.gameObject.tag == "Pump")
         {
-            isBallBig = true;
             sr.sprite = bigBallSprite;
             cc.radius = bigColliderRadius;
             cc.offset = bigColliderOffset;
@@ -124,7 +122,6 @@ public class Ball : MonoBehaviour
 
         if (collision.gameObject.tag == "Vaccum")
         {
-            isBallBig = false;
             sr.sprite = smallBallSprite;
             cc.radius = smallColliderRadius;
             cc.offset = smallColliderOffset;

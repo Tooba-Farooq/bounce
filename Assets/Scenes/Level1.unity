@@ -8391,9 +8391,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelCompleteText: {fileID: 1236893567400021580}
   finalScoreText: {fileID: 1026750741835777428}
-  star1: {fileID: 8429923738351761577}
-  star2: {fileID: 3934054003005932577}
-  star3: {fileID: 4482028480985706921}
+  stars:
+  - {fileID: 8429923738351761577}
+  - {fileID: 3934054003005932577}
+  - {fileID: 4482028480985706921}
   goldStarSprite: {fileID: -821478978567326252, guid: 9be15af1c19808c4aa97cf4561152ee4, type: 3}
 --- !u!224 &6964869174420741159
 RectTransform:

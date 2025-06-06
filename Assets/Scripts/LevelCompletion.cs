@@ -15,17 +15,17 @@ public class LevelCompletion : MonoBehaviour
     private Vector2 openGateColliderOffset = new Vector2(0.04248928f, 0f);
     private Vector2 openGateColliderSize = new Vector2(0.3627881f, 2f);
 
-    private BoxCollider2D collider;
+    private BoxCollider2D bc;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
         anim.enabled = false;
         RingHandler.RingCollected += OpenGate;
-        collider = GetComponent<BoxCollider2D>();
+        bc = GetComponent<BoxCollider2D>();
 
-        closeGateColliderSize = collider.size;
-        closeGateColliderOffset = collider.offset;
+        closeGateColliderSize = bc.size;
+        closeGateColliderOffset = bc.offset;
 }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,10 +46,10 @@ public class LevelCompletion : MonoBehaviour
             anim.enabled = true;
 
             gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-            collider.size = openGateColliderSize;
-            collider.offset = openGateColliderOffset;
+            bc.size = openGateColliderSize;
+            bc.offset = openGateColliderOffset;
 
-            SavingCompletedLevel.SaveCompletedLevel(GameManager.Instance.levelNo);
+            CompletedLevelAndStarsEarned.SaveCompletedLevel(GameManager.Instance.levelNo, 1); // 1 for true since playerprefs cant save boolean value
         }
     }
 

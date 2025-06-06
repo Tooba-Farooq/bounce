@@ -588,7 +588,6 @@ GameObject:
   - component: {fileID: 351596067}
   - component: {fileID: 351596066}
   - component: {fileID: 351596065}
-  - component: {fileID: 351596069}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -681,25 +680,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &351596069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 351596064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6aac3fcada0baea469d4161722998d9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level2ButtonText: {fileID: 2014264893}
-  star1: {fileID: 1116015774}
-  star2: {fileID: 573596731}
-  star3: {fileID: 378903817}
-  lockImage: {fileID: 623112815}
-  unlockedLevelSprite: {fileID: -3907293965434407538, guid: e723c72a020316545bbd595e5d643fb8, type: 3}
-  level2Button: {fileID: 1120467354}
 --- !u!1 &378903815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1511,6 +1491,7 @@ GameObject:
   - component: {fileID: 1120467355}
   - component: {fileID: 1120467354}
   - component: {fileID: 1120467357}
+  - component: {fileID: 1120467358}
   m_Layer: 5
   m_Name: Level 2 button
   m_TagString: Untagged
@@ -1531,10 +1512,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2014264892}
-  - {fileID: 1116015773}
   - {fileID: 573596730}
   - {fileID: 378903816}
   - {fileID: 623112814}
+  - {fileID: 1116015773}
   m_Father: {fileID: 351596068}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1638,6 +1619,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playButton: {fileID: 1120467354}
   scenetoLoad: Level2
+--- !u!114 &1120467358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120467352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac3fcada0baea469d4161722998d9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelNumber: 2
+  levelButton: {fileID: 1120467354}
+  levelButtonText: {fileID: 2014264893}
+  lockImage: {fileID: 623112815}
+  stars:
+  - {fileID: 1116015774}
+  - {fileID: 573596731}
+  - {fileID: 378903817}
+  unlockedLevelSprite: {fileID: -3907293965434407538, guid: e723c72a020316545bbd595e5d643fb8, type: 3}
 --- !u!1 &1668828244
 GameObject:
   m_ObjectHideFlags: 0
