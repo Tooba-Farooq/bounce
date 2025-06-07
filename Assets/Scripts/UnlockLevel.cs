@@ -11,7 +11,7 @@ public class UnlockLevel : MonoBehaviour
     [SerializeField] private Button levelButton;
     [SerializeField] private TextMeshProUGUI levelButtonText;
     [SerializeField] private Image lockImage;
-    [SerializeField] private Image[] stars;
+    [SerializeField] private Image[] greyStars;
 
     [Header("Sprites")]
     [SerializeField] private Sprite unlockedLevelSprite;
@@ -40,7 +40,7 @@ public class UnlockLevel : MonoBehaviour
 
         for (int i = 0; i < MAX_STARS; i++)
         {
-            stars[i].gameObject.SetActive(true);
+            greyStars[i].gameObject.SetActive(true);
         }
         
     }

@@ -3082,6 +3082,14 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 5302218990172313458, guid: e89046f99da03074f9146500d778a841, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 449.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302218990172313458, guid: e89046f99da03074f9146500d778a841, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 470.36
+      objectReference: {fileID: 0}
     - target: {fileID: 6722548226267917150, guid: e89046f99da03074f9146500d778a841, type: 3}
       propertyPath: scenetoLoad
       value: Level1
@@ -3106,6 +3114,22 @@ PrefabInstance:
       propertyPath: goldStarSprite
       value: 
       objectReference: {fileID: -821478978567326252, guid: 9be15af1c19808c4aa97cf4561152ee4, type: 3}
+    - target: {fileID: 8811052930436372474, guid: e89046f99da03074f9146500d778a841, type: 3}
+      propertyPath: stars.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8811052930436372474, guid: e89046f99da03074f9146500d778a841, type: 3}
+      propertyPath: 'stars.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1350389228}
+    - target: {fileID: 8811052930436372474, guid: e89046f99da03074f9146500d778a841, type: 3}
+      propertyPath: 'stars.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1350389227}
+    - target: {fileID: 8811052930436372474, guid: e89046f99da03074f9146500d778a841, type: 3}
+      propertyPath: 'stars.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1350389226}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

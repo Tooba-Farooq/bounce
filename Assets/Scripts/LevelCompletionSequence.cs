@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelCompletion : MonoBehaviour
+public class LevelCompletionSequence : MonoBehaviour
 {
     private Animator anim;
 

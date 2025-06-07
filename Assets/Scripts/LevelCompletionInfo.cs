@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DynamicScoreLevelAndStars : MonoBehaviour
+public class LevelCompletionInfo : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI levelCompleteText;
     [SerializeField] TextMeshProUGUI finalScoreText;
@@ -17,24 +17,13 @@ public class DynamicScoreLevelAndStars : MonoBehaviour
     private int previousEarnedStars;
     // previousEarnedStars = How many stars earned when player played this level earlier
 
-    private void Awake()
+    private void Start()
     {
         previousEarnedStars = CompletedLevelAndStarsEarned.LoadStarsForLevel(GameManager.Instance.levelNo);
-    }
-
-    void Start()
-    {
-        
         levelCompleteText.text = $"Level{GameManager.Instance.levelNo} Complete";
-        finalScoreText.text = $"{ScoreIncrementer.score+GameManager.Instance.extraFinalScore}";
+        finalScoreText.text = $"{ScoreIncrementer.score + GameManager.Instance.extraFinalScore}";
         StartCoroutine(GoldStarRoutine());
         
-        if (NoOfStars > previousEarnedStars)
-        {
-            CompletedLevelAndStarsEarned.SaveStarsForLevel(GameManager.Instance.levelNo, NoOfStars);
-        }
-        
-
     }
 
     private IEnumerator GoldStarRoutine()
@@ -43,8 +32,6 @@ public class DynamicScoreLevelAndStars : MonoBehaviour
         stars[0].sprite = goldStarSprite;
         NoOfStars++;
  
-        
-
         if (Ball.Instance.EnemyCollisionsNo <= 1)
         {
             yield return delayBeforeGoldStar;
@@ -61,7 +48,9 @@ public class DynamicScoreLevelAndStars : MonoBehaviour
 
         }
 
-    }
-
-   
+        if (NoOfStars > previousEarnedStars)
+        {
+            CompletedLevelAndStarsEarned.SaveStarsForLevel(GameManager.Instance.levelNo, NoOfStars);
+        }
+    } 
 }
