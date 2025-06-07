@@ -1,1 +1,3 @@
-A classic Nokia Bounce game clone made in Unity
+# Bounce
+## Description
+Classic Nokia Bounce game clone using Unity
